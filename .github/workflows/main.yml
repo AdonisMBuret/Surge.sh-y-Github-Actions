@@ -20,4 +20,4 @@ jobs:
         surge token 16f559dfa2b582965a213d8aa43eeaaf # Reemplazar <SURGE_API_KEY> con la API Key de Surge de cada estudiante
 
         # Desplegar en Surge.sh
-        surge --project ./ --domain surge ./ Adonis-20212396.surge.sh # Reemplazar <SURGE_SUBDOMAIN> con un subdominio único para cada estudiante
+        surge --project ./ --domain surge Adonis-20212396.surge.sh # Reemplazar <SURGE_SUBDOMAIN> con un subdominio único para cada estudiante
