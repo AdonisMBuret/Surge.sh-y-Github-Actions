@@ -1,4 +1,4 @@
-name: Surge Practica
+name: Deploy to Surge
 
 on:
   push:
@@ -10,11 +10,16 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-    - name: Checkout repository
-      uses: actions/checkout@v2
+      - name: Checkout repository
+        uses: actions/checkout@v2
 
-    - name: Build and Deploy
-      run: |
-        npm install --global surge
-        surge token ${{ secrets.SURGE_TOKEN }}
-        surge --project ./ --domain adonis-20212396.surge.sh
+      - name: Install Surge
+        run: npm install --global surge
+
+      - name: Deploy to Surge
+        env:
+          SURGE_TOKEN: ${{ secrets.SURGE_TOKEN }}
+        run: |
+          surge login --token $SURGE_TOKEN
+          surge --project ./ --domain adonis-20212396.surge.sh
+
