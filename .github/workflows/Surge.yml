@@ -1,4 +1,4 @@
-name: Deploy to Surge
+name: Surge Practica
 
 on:
   push:
