@@ -15,9 +15,6 @@ jobs:
 
     - name: Build and Deploy
       run: |
-        # Configurar Surge.sh
         npm install --global surge
-        surge token 16f559dfa2b582965a213d8aa43eeaaf 
-
-        # Desplegar en Surge.sh
-        surge --project ./ --domain adonis-20212396.surge.sh 
+        surge token ${{ secrets.SURGE_TOKEN }}
+        surge --project ./ --domain adonis-20212396.surge.sh
